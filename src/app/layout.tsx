@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { quickSand } from "../../public/fonts/fonts";
+import { jetBrains, quickSand } from "../../public/fonts/fonts";
 import "./globals.css";
 import ThemeProvider from "@/providers/ThemeProvider";
 import Navbar from "@/components/Navbar";
@@ -20,7 +20,7 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
     >
-      <body className={`${quickSand.className} antialiased`}>
+      <body className={`${jetBrains.className} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

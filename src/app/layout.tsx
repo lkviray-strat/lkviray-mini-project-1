@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { quickSand } from "../../public/fonts/fonts";
 import "./globals.css";
 import ThemeProvider from "@/providers/ThemeProvider";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Liam Kyle's Portfolio",
@@ -26,6 +27,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>

@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --radius: 16px;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -16,23 +17,23 @@
   --breakpoint-laptop: 1024px;
 }
 
-:root {
-  --background: #f0e9e1;
-  --secondaryBg: #edebe8;
-  --text: #242323;
-  --hoverBg: #e0d7cc;
-  --activeBg: #d6c7b8;
-}
-
-.dark {
-  --background: #292727;
-  --secondaryBg: #363434;
-  --text: #e3dada;
-  --hoverBg: #3a3a3a;
-  --activeBg: #252525;
-}
-
 @layer base {
+  :root {
+    --background: #f0e9e1;
+    --secondaryBg: #edebe8;
+    --text: #242323;
+    --hoverBg: #e0d7cc;
+    --activeBg: #d6c7b8;
+  }
+
+  .dark {
+    --background: #292727;
+    --secondaryBg: #363434;
+    --text: #e3dada;
+    --hoverBg: #3a3a3a;
+    --activeBg: #252525;
+  }
+
   body {
     background-color: var(--background);
     color: var(--text);

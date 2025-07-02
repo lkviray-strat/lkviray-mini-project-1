@@ -18,7 +18,7 @@ export const ContactForm = () => {
       toast.custom(() => (
         <ToastCustom type="SUCCESS">Message sent successfully!!</ToastCustom>
       ));
-    } else if (state?.status === "ERROR") {
+    } else if (state?.status === "ERROR" && state.fieldErrors === null) {
       toast.custom(() => (
         <ToastCustom type="ERROR">
           Unexpected error occurred. Try again later.

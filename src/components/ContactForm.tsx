@@ -1,11 +1,20 @@
-import React from "react";
+"use client";
+
+import React, { useActionState } from "react";
 import { Button } from "./ui/button";
+import { actionContactForm } from "@/lib/actions";
+import FormErrorMessage from "./FormErrorMessage";
 
 export const ContactForm = () => {
+  const [state, action, isPending] = useActionState(
+    actionContactForm,
+    undefined
+  );
+
   return (
     <form
       noValidate
-      action=""
+      action={action}
       className="flex flex-col gap-4 w-full max-w-[600px]"
     >
       <p className="mt-4 text-center text-[13px] tablet:text-[18px] tablet:text-left">
@@ -18,13 +27,20 @@ export const ContactForm = () => {
           htmlFor="name"
           className="font-semibold"
         >
-          Name
+          Name<span className="text-red-500 text-[12px] align-super">*</span>
         </label>
         <input
           type="text"
           id="name"
+          name="name"
+          defaultValue={state?.fieldData?.name}
           className="border-1 rounded-[12px] p-2 px-3.5"
           placeholder="Example Name"
+        />
+        <FormErrorMessage
+          error={state?.fieldErrors}
+          errorFor="name"
+          isMultiLine={true}
         />
       </div>
 
@@ -33,13 +49,20 @@ export const ContactForm = () => {
           htmlFor="email"
           className="font-semibold"
         >
-          Email
+          Email<span className="text-red-500 text-[12px] align-super">*</span>
         </label>
         <input
           type="email"
           id="email"
+          name="email"
+          defaultValue={state?.fieldData?.email}
           className="border-1 rounded-[12px] p-2 px-3.5 "
           placeholder="example.email@gmail.com"
+        />
+        <FormErrorMessage
+          error={state?.fieldErrors}
+          errorFor="email"
+          isMultiLine={true}
         />
       </div>
 
@@ -49,14 +72,22 @@ export const ContactForm = () => {
           className="font-semibold"
         >
           Message
+          <span className="text-red-500 text-[12px] align-super">*</span>
         </label>
         <textarea
           name="message"
           id="message"
           rows={5}
+          maxLength={500}
+          defaultValue={state?.fieldData?.message}
           className="border-1 rounded-[12px] p-2 px-3.5 placeholder-gray-500"
           placeholder="Type your message here..."
         ></textarea>
+        <FormErrorMessage
+          error={state?.fieldErrors}
+          errorFor="message"
+          isMultiLine={true}
+        />
       </div>
 
       <Button className="my-2 mb-[180px] bg-blue-700 p-4 w-full tablet:w-fit !px-6 lphone:!py-4 laptop:!px-9 text-[15px] lphone:text-[15px] tablet:text-[18px] tablet:!py-5 text-white hover:bg-blue-800 active:bg-blue-400 shadow-xl">

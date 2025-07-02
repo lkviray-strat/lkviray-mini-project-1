@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { quickSand } from "../../public/fonts/fonts";
 import ContactForm from "@/components/ContactForm";
+import AboutSection from "@/components/AboutSection";
 
 export default function Home() {
   return (
@@ -48,20 +49,19 @@ export default function Home() {
           id="about"
           className="flex flex-col items-center"
         >
-          <div className="flex flex-col items-center px-9 w-full max-w-[950px] tablet:items-start">
+          <div className="flex flex-col items-center px-9 w-full max-w-[1250px] tablet:items-start">
             <h1 className="mt-[6rem] laptop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight">
               About Me
             </h1>
 
-            {/* PlaceHolder */}
-            <div className="h-[100vh]"></div>
+            <AboutSection />
           </div>
         </section>
         <section
           id="projects"
           className="flex flex-col items-center"
         >
-          <div className="flex flex-col items-center px-9 w-full max-w-[950px] tablet:items-start">
+          <div className="flex flex-col items-center px-9 w-full max-w-[1250px] tablet:items-start">
             <h1 className="mt-[6rem] laptop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight">
               Projects
             </h1>
@@ -74,7 +74,7 @@ export default function Home() {
           id="contact"
           className="flex flex-col items-center"
         >
-          <div className="flex flex-col items-center px-9 w-full max-w-[950px] tablet:items-start">
+          <div className="flex flex-col items-center px-9 w-full max-w-[1250px] tablet:items-start">
             <h1 className="mt-[6rem] laptop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight">
               Contact Me
             </h1>

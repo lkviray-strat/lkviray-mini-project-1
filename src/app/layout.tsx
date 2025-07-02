@@ -3,6 +3,7 @@ import { jetBrains, quickSand } from "../../public/fonts/fonts";
 import "./globals.css";
 import ThemeProvider from "@/providers/ThemeProvider";
 import Navbar from "@/components/Navbar";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Liam Kyle's Portfolio",
@@ -28,7 +29,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
+          <main>{children}</main>
+          <Toaster
+            position="bottom-right"
+            richColors
+          />
         </ThemeProvider>
       </body>
     </html>

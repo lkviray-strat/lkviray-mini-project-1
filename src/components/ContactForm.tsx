@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useActionState } from "react";
+import React, { useActionState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { actionContactForm } from "@/lib/actions";
 import FormErrorMessage from "./FormErrorMessage";
+import { toast } from "sonner";
+import ToastCustom from "./ToastCustom";
 
 export const ContactForm = () => {
   const [state, action, isPending] = useActionState(
@@ -11,11 +13,25 @@ export const ContactForm = () => {
     undefined
   );
 
+  useEffect(() => {
+    if (state?.status === "SUCCESS") {
+      toast.custom(() => (
+        <ToastCustom type="SUCCESS">Message sent successfully!!</ToastCustom>
+      ));
+    } else if (state?.status === "ERROR") {
+      toast.custom(() => (
+        <ToastCustom type="ERROR">
+          Unexpected error occurred. Try again later.
+        </ToastCustom>
+      ));
+    }
+  }, [state]);
+
   return (
     <form
       noValidate
       action={action}
-      className="flex flex-col gap-4 w-full max-w-[600px]"
+      className="flex flex-col gap-4 w-full max-w-[600px] tablet:ml-2"
     >
       <p className="mt-4 text-center text-[13px] tablet:text-[18px] tablet:text-left">
         Let’s make something awesome together! Send me a message and I’ll get
@@ -34,7 +50,7 @@ export const ContactForm = () => {
           id="name"
           name="name"
           defaultValue={state?.fieldData?.name}
-          className="border-1 rounded-[12px] p-2 px-3.5"
+          className="border-1 rounded-[12px] p-2 px-3.5 focus:outline-blue-600"
           placeholder="Example Name"
         />
         <FormErrorMessage
@@ -56,7 +72,7 @@ export const ContactForm = () => {
           id="email"
           name="email"
           defaultValue={state?.fieldData?.email}
-          className="border-1 rounded-[12px] p-2 px-3.5 "
+          className="border-1 rounded-[12px] p-2 px-3.5 focus:outline-blue-600"
           placeholder="example.email@gmail.com"
         />
         <FormErrorMessage
@@ -80,7 +96,7 @@ export const ContactForm = () => {
           rows={5}
           maxLength={500}
           defaultValue={state?.fieldData?.message}
-          className="border-1 rounded-[12px] p-2 px-3.5 placeholder-gray-500"
+          className="border-1 rounded-[12px] p-2 px-3.5 placeholder-gray-500 focus:outline-blue-600"
           placeholder="Type your message here..."
         ></textarea>
         <FormErrorMessage
@@ -90,8 +106,12 @@ export const ContactForm = () => {
         />
       </div>
 
-      <Button className="my-2 mb-[180px] bg-blue-700 p-4 w-full tablet:w-fit !px-6 lphone:!py-4 laptop:!px-9 text-[15px] lphone:text-[15px] tablet:text-[18px] tablet:!py-5 text-white hover:bg-blue-800 active:bg-blue-400 shadow-xl">
-        Submit
+      <Button
+        disabled={isPending}
+        type="submit"
+        className="my-2 mb-[180px] bg-blue-700 p-4 w-full tablet:w-fit !px-6 lphone:!py-4 laptop:!px-9 text-[15px] lphone:text-[15px] tablet:text-[18px] tablet:!py-5 text-white hover:bg-blue-800 active:bg-blue-400 shadow-xl"
+      >
+        {isPending ? "Sending..." : "Submit"}
       </Button>
     </form>
   );

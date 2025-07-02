@@ -16,6 +16,17 @@ export async function actionContactForm(
 
   try {
     await contactSchema.parseAsync(formValues);
+
+    return {
+      status: "SUCCESS",
+      error: "",
+      fieldErrors: {},
+      fieldData: {
+        name: "",
+        email: "",
+        message: "",
+      },
+    };
   } catch (error) {
     if (error instanceof z.ZodError) {
       const fieldErrors = error.flatten().fieldErrors;

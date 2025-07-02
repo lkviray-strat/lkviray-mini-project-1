@@ -1,0 +1,18 @@
+export const skills = [
+  { name: "Java", color: "#df8e2b" },
+  { name: "JavaScript", color: "#f0db4f" },
+  { name: "TypeScript", color: "#2f74c0" },
+  { name: "HTML5", color: "#e54c21" },
+  { name: "CSS3", color: "#2965f1" },
+  { name: "TailwindCSS", color: "#3ebff8" },
+  { name: "React", color: "#36393e" },
+  { name: "Spring", color: "#6db33f" },
+  { name: "Spring Boot", color: "#69c16e" },
+  { name: "Next.js", color: "#111111" },
+  { name: "Docker", color: "#2496ed" },
+  { name: "Flutter", color: "#3fbaf1" },
+  { name: "Dart", color: "#03589c" },
+  { name: "Firebase", color: "#f5c43c" },
+  { name: "Git", color: "#e84d31" },
+  { name: "GitHub", color: "#2B3137" },
+];

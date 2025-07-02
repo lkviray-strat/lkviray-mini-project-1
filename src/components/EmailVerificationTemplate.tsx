@@ -1,4 +1,5 @@
 import * as React from "react";
+import { EmailTemplateProps } from "./EmailTemplate"; // Assuming you have a types file
 import {
   Body,
   Container,
@@ -9,17 +10,16 @@ import {
   Text,
 } from "@react-email/components";
 
-export interface EmailTemplateProps {
-  name: string;
-  email: string;
-  message: string;
-}
+type EmailVerificationTemplateProps = Omit<EmailTemplateProps, "email">;
 
-export function EmailTemplate({ name, email, message }: EmailTemplateProps) {
+export const EmailVerificationTemplate = ({
+  name,
+  message,
+}: EmailVerificationTemplateProps) => {
   return (
     <Html>
       <Head />
-      <Preview>Portfolio Contact: New message fro {name}</Preview>
+      <Preview>Thanks for reaching out!</Preview>
       <Body
         style={{
           backgroundColor: "#f2f2f2",
@@ -39,7 +39,7 @@ export function EmailTemplate({ name, email, message }: EmailTemplateProps) {
           <Container
             style={{
               margin: "10px 20px",
-              width: "100%",
+              width: "fit-content",
             }}
           >
             <Text
@@ -49,21 +49,13 @@ export function EmailTemplate({ name, email, message }: EmailTemplateProps) {
                 fontWeight: "bold",
               }}
             >
-              ✉️ New Contact Form Submission
+              Hi {name},
             </Text>
 
-            <Text style={{ fontSize: "16px", marginBottom: "-15px" }}>
-              <strong>From:</strong> {name}
-            </Text>
-
-            <Text style={{ fontSize: "16px", marginBottom: "20px" }}>
-              <strong>Email:</strong> {email}
-            </Text>
-
-            <Text style={{ fontSize: "13px", marginBottom: "24px" }}>
-              You’ve received a new message through your website’s contact form.
-              The details are provided below. Be sure to follow up as soon as
-              possible to keep the conversation going.
+            <Text style={{ fontSize: "16px", marginBottom: "24px" }}>
+              Thank you for reaching out! Your message has been successfully
+              received. I truly appreciate it and will get back to you as soon
+              as possible.
             </Text>
 
             <Section
@@ -71,7 +63,6 @@ export function EmailTemplate({ name, email, message }: EmailTemplateProps) {
                 backgroundColor: "#f9f9f9",
                 borderRadius: "8px",
                 border: "1px solid #e0e0e0",
-                width: "full",
                 marginBottom: "32px",
               }}
             >
@@ -88,7 +79,7 @@ export function EmailTemplate({ name, email, message }: EmailTemplateProps) {
                     marginBottom: "10px",
                   }}
                 >
-                  <strong>Message:</strong>
+                  <strong>Your message:</strong>
                 </Text>
                 <Text
                   style={{ fontSize: "15px", color: "#333", lineHeight: "1.6" }}
@@ -98,13 +89,22 @@ export function EmailTemplate({ name, email, message }: EmailTemplateProps) {
               </Section>
             </Section>
 
-            <Text style={{ fontSize: "13px", color: "#888" }}>
-              You received this email because someone submitted your website
-              contact form.
+            <Text
+              style={{ fontSize: "15px", color: "#444", marginBottom: "32px" }}
+            >
+              Looking forward to connecting with you soon!
+            </Text>
+
+            <Text
+              style={{ fontSize: "15px", color: "#222", fontWeight: "bold" }}
+            >
+              Best regards,
+              <br />
+              {process.env.RESEND_MY_NAME}
             </Text>
           </Container>
         </Container>
       </Body>
     </Html>
   );
-}
+};

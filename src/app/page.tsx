@@ -42,6 +42,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <div className="px-4 tablet:px-9 laptop:px-12">
         <section
           id="about"

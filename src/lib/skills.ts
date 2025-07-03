@@ -11,7 +11,7 @@ export const getSkillsByName = (
   }
   return names
     .map((name) =>
-      skills.find((skill) => skill.name.toLowerCase() === name.toLowerCase())
+      allSkills.find((skill) => skill.name.toLowerCase() === name.toLowerCase())
     )
     .filter((skill): skill is Skill => skill !== undefined);
 };
@@ -26,6 +26,7 @@ export const skills: Skill[] = [
   { name: "React", color: "#36393e" },
   { name: "Spring", color: "#6db33f" },
   { name: "Spring Boot", color: "#69c16e" },
+  { name: "Spring Security", color: "#6db33f" },
   { name: "Next.js", color: "#111111" },
   { name: "Docker", color: "#2496ed" },
   { name: "Flutter", color: "#3fbaf1" },
@@ -33,6 +34,8 @@ export const skills: Skill[] = [
   { name: "Firebase", color: "#f5c43c" },
   { name: "Git", color: "#e84d31" },
   { name: "GitHub", color: "#2B3137" },
+  { name: "PostgreSQL", color: "#336791" },
+  { name: "MySQL", color: "#00758F" },
 ];
 
 export const allSkills: Skill[] = [
@@ -52,4 +55,12 @@ export const allSkills: Skill[] = [
   { name: "Jenkins", color: "#D33833" },
   { name: "Figma", color: "#A259FF" },
   { name: "Sass", color: "#CD6799" },
+  { name: "Websockets", color: "#8cc84b" },
+  { name: "Postman", color: "#ff6c37" },
+  { name: "Sentry", color: "#FB4226" },
+  { name: "Sanity", color: "#F03E2F" },
+  { name: "NextAuth", color: "#000000" },
+  { name: "PyTorch", color: "#EE4C2C" },
+  { name: "Streamlit", color: "#FF4B4B" },
+  { name: "Machine Learning", color: "#0B3D91" },
 ];

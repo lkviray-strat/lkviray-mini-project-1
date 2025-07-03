@@ -15,7 +15,7 @@ const AboutSection = () => {
       />
 
       <div className="flex flex-col gap-3 w-full order-2 laptop:order-1">
-        <p className="col-span-2 mphone:col-span-3 text-[13px] desktop:text-[17px] mb-4">
+        <p className="col-span-2 mphone:col-span-3 text-[15px] laptop:text-[17px] mb-4">
           I'm <strong>Liam Kyle Viray</strong>, a passionate and aspiring Full
           Stack Software Engineer with great interest on <strong>React</strong>{" "}
           and <strong>Java</strong>. I graduated{" "}

@@ -50,7 +50,7 @@ export default function Home() {
           className="flex flex-col items-center"
         >
           <div className="flex flex-col items-center px-9 w-full max-w-[1250px] tablet:items-start">
-            <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight">
+            <h1 className="mt-[6rem] laptop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight">
               About Me
             </h1>
 
@@ -62,7 +62,7 @@ export default function Home() {
           className="flex flex-col items-center"
         >
           <div className="flex flex-col items-center px-9 w-full max-w-[1250px] tablet:items-start">
-            <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight">
+            <h1 className="mt-[6rem] laptop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight">
               Projects
             </h1>
 
@@ -75,7 +75,7 @@ export default function Home() {
           className="flex flex-col items-center"
         >
           <div className="flex flex-col items-center px-9 w-full max-w-[1250px] tablet:items-start">
-            <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight">
+            <h1 className="mt-[6rem] laptop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight">
               Contact Me
             </h1>
 

@@ -3,6 +3,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { quickSand } from "../../public/fonts/fonts";
 import ContactForm from "@/components/ContactForm";
 import AboutSection from "@/components/AboutSection";
+import ProjectSection from "@/components/ProjectSection";
 
 export default function Home() {
   return (
@@ -61,14 +62,13 @@ export default function Home() {
           id="projects"
           className="flex flex-col items-center"
         >
-          <div className="flex flex-col items-center px-9 w-full max-w-[1250px] tablet:items-start">
+          <div className="flex flex-col items-center px-9 w-full max-w-[1250px]">
             <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight">
-              Projects
+              My Projects
             </h1>
-
-            {/* PlaceHolder */}
-            <div className="h-[100vh]"></div>
           </div>
+
+          <ProjectSection />
         </section>
         <section
           id="contact"

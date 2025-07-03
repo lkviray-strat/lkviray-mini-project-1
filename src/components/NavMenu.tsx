@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import { navigation } from "@/lib/navigation";
 import { buttonVariants } from "./ui/button";
 import ThemeToggle from "./ThemeToggle";
+import Link from "next/link";
 
 export const NavMenu = () => {
   return (
@@ -13,7 +16,7 @@ export const NavMenu = () => {
             variant: "default",
           })} text-[18px] font-semibold`}
         >
-          <a href={`#${item.toLowerCase()}`}>{item}</a>
+          <Link href={`#${item.toLowerCase()}`}>{item}</Link>
         </li>
       ))}
 

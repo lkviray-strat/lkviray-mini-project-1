@@ -33,7 +33,7 @@ export const ContactForm = () => {
       action={action}
       className="flex flex-col gap-4 w-full max-w-[600px] tablet:ml-2 mt-4"
     >
-      <p className="text-center text-[13px] tablet:text-[18px] tablet:text-left">
+      <p className="text-center text-[13px] tablet:text-[15px] desktop:text-[18px] tablet:text-left">
         Let’s make something awesome together! Send me a message and I’ll get
         right back to you as soon as possible.
       </p>

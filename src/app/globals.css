@@ -15,6 +15,7 @@
   --breakpoint-lphone: 425px;
   --breakpoint-tablet: 640px;
   --breakpoint-laptop: 1024px;
+  --breakpoint-desktop: 1600px;
 }
 
 @layer base {

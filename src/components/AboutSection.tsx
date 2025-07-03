@@ -2,6 +2,7 @@ import { skills } from "@/lib/skills";
 import Image from "next/image";
 import React from "react";
 import { Badge } from "./ui/badge";
+import SkillBadge from "./SkillBadge";
 
 const AboutSection = () => {
   return (
@@ -40,14 +41,11 @@ const AboutSection = () => {
 
         <div className="flex flex-row flex-wrap gap-2 mb-4">
           {skills.map((skill) => (
-            <Badge
+            <SkillBadge
               key={skill.name}
-              style={{ backgroundColor: skill.color }}
-              className="text-[12px] tablet:text-[15px] px-4 py-1 "
-              asChild
-            >
-              <span className="text-white font-medium">{skill.name}</span>
-            </Badge>
+              skillColor={skill.color}
+              skillName={skill.name}
+            />
           ))}
         </div>
       </div>

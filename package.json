@@ -24,6 +24,7 @@
     "resend": "^4.6.0",
     "sonner": "^2.0.5",
     "tailwind-merge": "^3.3.1",
+    "typewriter-effect": "^2.22.0",
     "zod": "^3.25.67"
   },
   "devDependencies": {

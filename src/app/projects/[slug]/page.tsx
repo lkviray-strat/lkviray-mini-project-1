@@ -1,9 +1,7 @@
 import ProjectCarousel from "@/components/ProjectCarousel";
 import { Button } from "@/components/ui/button";
 import { getProjectBySlug, Project } from "@/lib/projects";
-import { getSkillsByName, Skill } from "@/lib/skills";
 import { Eye, Lock } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -16,7 +14,6 @@ type ProjectPageProps = {
 export async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
-  const imageUrl = project?.imageUrls?.[0];
 
   return (
     <div className="px-4 tablet:px-9 laptop:px-12">

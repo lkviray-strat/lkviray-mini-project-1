@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import NavDropDown from "./NavDropdown";
 import NavMenu from "./NavMenu";
 import { usePathname } from "next/navigation";
-import { buttonVariants } from "./ui/button";
 import NavReturn from "./NavReturn";
 
 export const Navbar = () => {

@@ -1,6 +1,4 @@
-import Navbar from "@/components/Navbar";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { quickSand } from "../../public/fonts/fonts";
+import { buttonVariants } from "@/components/ui/button";
 import ContactForm from "@/components/ContactForm";
 import AboutSection from "@/components/AboutSection";
 import ProjectSection from "@/components/ProjectSection";
@@ -21,7 +19,7 @@ export default function Home() {
           >
             Hello,{" "}
             <span className="-ml-2 tablet:-ml-4 ">
-              I'm
+              I&apos;m
               <span className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent font-bold">
                 {" "}
                 Liam <span className="hidden tablet:inline">Kyle</span>

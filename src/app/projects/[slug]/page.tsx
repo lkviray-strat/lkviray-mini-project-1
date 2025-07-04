@@ -11,7 +11,7 @@ type ProjectPageProps = {
   };
 };
 
-export async function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
 
@@ -58,5 +58,3 @@ export async function ProjectPage({ params }: ProjectPageProps) {
     </div>
   );
 }
-
-export default ProjectPage;

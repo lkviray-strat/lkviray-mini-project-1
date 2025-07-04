@@ -15,7 +15,6 @@ export const ProjectCard = async ({ slug }: ProjectCardProps) => {
     (getSkillsByName(project?.skills ?? []) as Skill[]) || [];
   const imageUrl = project?.imageUrls?.[0];
 
-  console.log(project?.imageUrls);
   return (
     <Link
       href={`/projects/${project?.slug}`}

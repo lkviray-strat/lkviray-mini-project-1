@@ -39,7 +39,7 @@ export const ProjectCarousel = ({ project }: ProjectCarouselProps) => {
                 alt={project.title as string}
                 src={image as string}
                 fill
-                className="object-top-left"
+                className="object-center laptop:object-contain"
               />
             </div>
           </CarouselItem>

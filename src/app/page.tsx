@@ -4,6 +4,7 @@ import { quickSand } from "../../public/fonts/fonts";
 import ContactForm from "@/components/ContactForm";
 import AboutSection from "@/components/AboutSection";
 import ProjectSection from "@/components/ProjectSection";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -29,18 +30,24 @@ export default function Home() {
           </h1>
 
           <div className="flex flex-col lphone:flex-row w-full lphone:w-fit gap-3 laptop:gap-5 items-center mt-4 px-3 justify-center">
-            <a
+            <Link
               href="#about"
               className={`${buttonVariants({
                 variant: "default",
               })} flex-1 bg-blue-700 p-4 w-full !px-6 lphone:!py-4 laptop:!px-9 text-[15px] lphone:text-[15px] tablet:text-[18px] tablet:!py-5 text-white hover:bg-blue-800 active:bg-blue-400 shadow-xl`}
             >
               Know About Me
-            </a>
+            </Link>
 
-            <Button className="flex-1 bg-[var(--secondaryBg)] w-full !px-6 lphone:!py-4 laptop:!px-9 text-[15px] lphone:text-[15px] tablet:text-[18px] tablet:!py-5 shadow-xl">
+            <Link
+              download
+              href={"/downloads/Liam-Kyle-Viray_CV.pdf"}
+              className={`${buttonVariants({
+                variant: "default",
+              })} flex-1 bg-[var(--secondaryBg)] w-full !px-6 lphone:!py-4 laptop:!px-9 text-[15px] lphone:text-[15px] tablet:text-[18px] tablet:!py-5 shadow-xl`}
+            >
               Download CV
-            </Button>
+            </Link>
           </div>
         </div>
       </section>

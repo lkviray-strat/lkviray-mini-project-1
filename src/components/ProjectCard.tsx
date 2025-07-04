@@ -13,18 +13,18 @@ export const ProjectCard = async ({ slug }: ProjectCardProps) => {
   const project = getProjectBySlug(slug);
   const skills: Skill[] =
     (getSkillsByName(project?.skills ?? []) as Skill[]) || [];
-  const imageUrl = project?.imageUrl + "/" + project?.slug;
+  const imageUrl = project?.imageUrls?.[0];
 
-  console.log(imageUrl);
+  console.log(project?.imageUrls);
   return (
     <Link
       href={`/projects/${project?.slug}`}
-      className="flex flex-col p-4 p border-1 gap-4 rounded-2xl grow basis-[350px] max-w-[420px] shadow-lg hover:shadow-xl transition-shadow duration-300"
+      className="flex flex-col p-4 p border-1 gap-4 rounded-2xl grow basis-[350px] max-w-[420px] shadow-lg hover:scale-95 transition-transform duration-400"
     >
       <div className="w-full aspect-[3/3] relative mb-2 rounded-2xl overflow-hidden">
         <Image
           alt={project?.title as string}
-          src={`${imageUrl}-1.png`}
+          src={imageUrl as string}
           fill
           className="object-cover"
         />

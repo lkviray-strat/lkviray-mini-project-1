@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import AboutSection from "@/components/AboutSection";
 import ProjectSection from "@/components/ProjectSection";
 import Link from "next/link";
-import Typewriter from "typewriter-effect";
+import { Icon } from "@iconify/react";
 import Subheading from "@/components/Subheading";
 
 export default function Home() {
@@ -50,6 +50,20 @@ export default function Home() {
               Download CV
             </Link>
           </div>
+          <div className="flex gap-7 items-center mt-10">
+            <Link href="https://github.com/xNeshi">
+              <Icon
+                icon="codicon:github-inverted"
+                className="size-10 transition-colors duration-200 hover:text-blue-400"
+              />
+            </Link>
+            <Link href="https://www.linkedin.com/in/liam-kyle-viray/">
+              <Icon
+                icon="devicon-plain:linkedin"
+                className="size-10 transition-colors duration-200 hover:text-blue-400"
+              />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -59,7 +73,7 @@ export default function Home() {
           className="flex flex-col items-center"
         >
           <div className="flex flex-col items-center px-9 w-full max-w-[1250px] tablet:items-start">
-            <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight">
+            <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight transition-colors duration-200 hover:text-blue-400">
               About Me
             </h1>
 
@@ -71,7 +85,7 @@ export default function Home() {
           className="flex flex-col items-center"
         >
           <div className="flex flex-col items-center px-9 w-full max-w-[1250px]">
-            <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight">
+            <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight transition-colors duration-200 hover:text-blue-400">
               My Projects
             </h1>
           </div>
@@ -83,7 +97,7 @@ export default function Home() {
           className="flex flex-col items-center"
         >
           <div className="flex flex-col items-center px-9 w-full max-w-[1250px] tablet:items-start">
-            <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight">
+            <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight transition-colors duration-200 hover:text-blue-400">
               Contact Me
             </h1>
 

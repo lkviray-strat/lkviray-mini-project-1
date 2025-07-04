@@ -35,7 +35,7 @@ const AboutSection = () => {
           collaborate on a project! I'm always open to new opportunities and
           challenges.
         </p>
-        <h2 className="text-[19px] laptop:text-[35px] tracking-tight font-extrabold">
+        <h2 className="text-[19px] laptop:text-[35px] tracking-tight font-extrabold transition-colors duration-200 hover:text-blue-400">
           Skills
         </h2>
 

@@ -21,7 +21,7 @@
 @layer base {
   :root {
     --background: #f0e9e1;
-    --secondaryBg: #edebe8;
+    --secondaryBg: #ffffff;
     --text: #242323;
     --hoverBg: #e0d7cc;
     --activeBg: #d6c7b8;

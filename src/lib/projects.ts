@@ -7,7 +7,6 @@ export interface Project {
   title: string;
   description: string;
   imageUrls: string[]; // Changed to an array to support multiple images
-  demoUrl?: string;
   skills: string[];
   githubUrl?: string;
 }
@@ -52,6 +51,7 @@ export const projects: Project[] = [
     ],
     imageUrls: [],
     slug: "",
+    githubUrl: "https://github.com/xNeshi/live-group-chat",
   }),
   createProject({
     title: "ShrtnURL",
@@ -60,6 +60,7 @@ export const projects: Project[] = [
     skills: ["Java", "Spring", "Spring Boot", "Postman", "PostgreSQL"],
     imageUrls: [],
     slug: "",
+    githubUrl: "https://github.com/xNeshi/shrtnurl",
   }),
   createProject({
     title: "Auth Security",
@@ -69,6 +70,7 @@ export const projects: Project[] = [
     skills: ["Java", "Spring", "Postman", "Spring Security", "PostgreSQL"],
     imageUrls: [],
     slug: "",
+    githubUrl: "https://github.com/xNeshi/auth-security",
   }),
   createProject({
     title: "Collab Project",
@@ -85,6 +87,7 @@ export const projects: Project[] = [
     ],
     imageUrls: [],
     slug: "",
+    githubUrl: "https://github.com/xNeshi/collab-project",
   }),
   createProject({
     title: "Modified YOLOv5 Streamlit",
@@ -93,5 +96,6 @@ export const projects: Project[] = [
     skills: ["Python", "Streamlit", "PyTorch", "Machine Learning"],
     imageUrls: [],
     slug: "",
+    githubUrl: "",
   }),
 ];

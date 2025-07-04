@@ -18,7 +18,7 @@ export const ProjectCard = async ({ slug }: ProjectCardProps) => {
   return (
     <Link
       href={`/projects/${project?.slug}`}
-      className="flex flex-col p-4 p border-1 gap-4 rounded-2xl grow basis-[350px] max-w-[420px] shadow-lg hover:scale-95 transition-transform duration-400"
+      className="flex flex-col p-4 p border-1 gap-4 rounded-2xl grow basis-[350px] max-w-[420px] shadow-lg hover:scale-98 transition-transform duration-400 hover:brightness-90"
     >
       <div className="w-full aspect-[3/3] relative mb-2 rounded-2xl overflow-hidden">
         <Image
@@ -28,7 +28,7 @@ export const ProjectCard = async ({ slug }: ProjectCardProps) => {
           className="object-cover"
         />
       </div>
-      <h2 className="text-[18px] tablet:text-[21px] font-extrabold ">
+      <h2 className="text-[18px] tablet:text-[21px] font-extrabold transition-colors duration-200 hover:text-blue-400 ">
         {project?.title}
       </h2>
       <p className="text-[13px] tablet:text-[16px] line-clamp-3">

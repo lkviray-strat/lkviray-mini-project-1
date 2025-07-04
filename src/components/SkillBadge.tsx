@@ -9,8 +9,8 @@ type SkillBadgeProps = {
 export const SkillBadge = ({ skillName, skillColor }: SkillBadgeProps) => {
   return (
     <Badge
-      style={{ backgroundColor: `${skillColor}` }}
-      className="text-[14px] tablet:text-[15px] px-4 py-1 "
+      style={{ backgroundColor: skillColor, transition: "filter 0.2s" }}
+      className="text-[14px] tablet:text-[15px] px-4 py-1 cursor-pointer hover:brightness-70"
       asChild
     >
       <span

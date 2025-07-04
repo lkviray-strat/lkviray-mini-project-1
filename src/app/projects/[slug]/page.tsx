@@ -6,13 +6,13 @@ import Link from "next/link";
 import React from "react";
 
 type ProjectPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const { slug } = params;
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
   const project = getProjectBySlug(slug);
 
   return (

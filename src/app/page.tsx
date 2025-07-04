@@ -5,6 +5,8 @@ import ContactForm from "@/components/ContactForm";
 import AboutSection from "@/components/AboutSection";
 import ProjectSection from "@/components/ProjectSection";
 import Link from "next/link";
+import Typewriter from "typewriter-effect";
+import Subheading from "@/components/Subheading";
 
 export default function Home() {
   return (
@@ -19,15 +21,14 @@ export default function Home() {
           >
             Hello,{" "}
             <span className="-ml-2 tablet:-ml-4 ">
-              I'm Liam <span className="hidden tablet:inline">Kyle</span>
+              I'm
+              <span className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent font-bold">
+                {" "}
+                Liam <span className="hidden tablet:inline">Kyle</span>
+              </span>
             </span>
           </h1>
-          <h1
-            className={`text-[16px] lphone:text-[22px] tablet:text-[20px] laptop:text-[28px] italic`}
-          >
-            An Aspiring Full Stack <br className="tablet:hidden" /> Software
-            Engineer
-          </h1>
+          <Subheading />
 
           <div className="flex flex-col lphone:flex-row w-full lphone:w-fit gap-3 laptop:gap-5 items-center mt-4 px-3 justify-center">
             <Link

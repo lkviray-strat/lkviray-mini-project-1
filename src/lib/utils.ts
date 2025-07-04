@@ -5,13 +5,18 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatErrors(errors: any) {
+export function formatErrors(
+  errors: Record<string, string[] | undefined>
+): Record<string, string> {
   const formattedErrors: Record<string, string> = {};
+
   for (const key in errors) {
-    if (errors[key]) {
-      formattedErrors[key] = errors[key]?.join(". ") || "";
+    const errorArray = errors[key];
+    if (Array.isArray(errorArray)) {
+      formattedErrors[key] = errorArray.join(". ");
     }
   }
+
   return formattedErrors;
 }
 export const slugify = (text: string) => {

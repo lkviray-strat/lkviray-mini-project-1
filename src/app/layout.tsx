@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { jetBrains, quickSand } from "../../public/fonts/fonts";
+import { jetBrains } from "../../public/fonts/fonts";
 import "./globals.css";
 import ThemeProvider from "@/providers/ThemeProvider";
 import Navbar from "@/components/Navbar";

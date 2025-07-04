@@ -1,5 +1,4 @@
 import React from "react";
-import { Badge } from "./ui/badge";
 import SkillBadge from "./SkillBadge";
 import Link from "next/link";
 import { getProjectBySlug } from "@/lib/projects";

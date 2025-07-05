@@ -1,7 +1,6 @@
-import React from "react";
-import ThemeToggle from "./ThemeToggle";
-import { buttonVariants } from "./ui/button";
 import Link from "next/link";
+import ThemeToggle from "../ThemeToggle";
+import { buttonVariants } from "../ui/button";
 
 export const NavReturn = () => {
   return (

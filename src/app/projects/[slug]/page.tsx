@@ -1,9 +1,9 @@
-import ProjectCarousel from "@/components/ProjectCarousel";
+import ProjectCarousel from "@/components/project/ProjectCarousel";
 import { Button } from "@/components/ui/button";
-import { getProjectBySlug, Project } from "@/lib/data/projects";
+import { Project } from "@/lib/data/projects";
+import { getProjectBySlug } from "@/lib/queries/project";
 import { Eye, Lock } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 
 type ProjectPageProps = {
   params: Promise<{

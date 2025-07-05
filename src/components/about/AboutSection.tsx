@@ -1,7 +1,6 @@
 import { skills } from "@/lib/data/skills";
 import Image from "next/image";
-import React from "react";
-import SkillBadge from "./SkillBadge";
+import SkillBadge from "../SkillBadge";
 
 const AboutSection = () => {
   return (

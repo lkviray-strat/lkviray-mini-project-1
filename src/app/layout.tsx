@@ -1,9 +1,9 @@
+import Navbar from "@/components/navbar/Navbar";
+import ThemeProvider from "@/providers/ThemeProvider";
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 import { jetBrains } from "../../public/fonts/fonts";
 import "./globals.css";
-import ThemeProvider from "@/providers/ThemeProvider";
-import Navbar from "@/components/Navbar";
-import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Liam Kyle's Portfolio",

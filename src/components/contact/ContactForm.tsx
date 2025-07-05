@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useActionState, useEffect } from "react";
-import { Button } from "./ui/button";
 import { actionContactForm } from "@/lib/actions";
-import FormErrorMessage from "./FormErrorMessage";
+import { useActionState, useEffect } from "react";
 import { toast } from "sonner";
-import ToastCustom from "./ToastCustom";
+import FormErrorMessage from "../FormErrorMessage";
+import ToastCustom from "../ToastCustom";
+import { Button } from "../ui/button";
 
 export const ContactForm = () => {
   const [state, action, isPending] = useActionState(

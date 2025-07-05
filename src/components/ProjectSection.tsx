@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import { projects } from "@/lib/projects";
+import { projects } from "@/lib/data/projects";
 
 export const ProjectSection = () => {
   return (

@@ -1,11 +1,11 @@
 "use server";
 
-import { z } from "zod";
-import { contactSchema } from "./validations";
-import { formatErrors } from "./utils";
+import { EmailTemplate } from "@/components/contact/EmailTemplate";
+import { EmailVerificationTemplate } from "@/components/contact/EmailVerificationTemplate";
 import { Resend } from "resend";
-import { EmailTemplate } from "@/components/EmailTemplate";
-import { EmailVerificationTemplate } from "@/components/EmailVerificationTemplate";
+import { z } from "zod";
+import { formatErrors } from "./utils";
+import { contactSchema } from "./validations";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 

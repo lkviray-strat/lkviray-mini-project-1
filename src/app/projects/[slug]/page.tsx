@@ -1,6 +1,6 @@
 import ProjectCarousel from "@/components/ProjectCarousel";
 import { Button } from "@/components/ui/button";
-import { getProjectBySlug, Project } from "@/lib/projects";
+import { getProjectBySlug, Project } from "@/lib/data/projects";
 import { Eye, Lock } from "lucide-react";
 import Link from "next/link";
 import React from "react";

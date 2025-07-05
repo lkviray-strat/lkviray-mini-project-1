@@ -1,9 +1,9 @@
-import React from "react";
-import SkillBadge from "./SkillBadge";
-import Link from "next/link";
-import { getProjectBySlug } from "@/lib/projects";
-import { getSkillsByName, Skill } from "@/lib/skills";
+import { Skill } from "@/lib/data/skills";
+import { getProjectBySlug } from "@/lib/queries/project";
+import { getSkillsByName } from "@/lib/queries/skills";
 import Image from "next/image";
+import Link from "next/link";
+import SkillBadge from "./SkillBadge";
 
 type ProjectCardProps = {
   slug: string;

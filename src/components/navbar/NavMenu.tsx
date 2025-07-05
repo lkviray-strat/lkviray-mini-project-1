@@ -1,10 +1,9 @@
 "use client";
 
-import React from "react";
 import { navigation } from "@/lib/data/navigation";
-import { buttonVariants } from "./ui/button";
-import ThemeToggle from "./ThemeToggle";
 import Link from "next/link";
+import ThemeToggle from "../ThemeToggle";
+import { buttonVariants } from "../ui/button";
 
 export const NavMenu = () => {
   return (

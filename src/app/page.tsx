@@ -1,10 +1,10 @@
+import AboutSection from "@/components/about/AboutSection";
+import ContactForm from "@/components/contact/ContactForm";
+import Subheading from "@/components/home/Subheading";
+import ProjectSection from "@/components/project/ProjectSection";
 import { buttonVariants } from "@/components/ui/button";
-import ContactForm from "@/components/ContactForm";
-import AboutSection from "@/components/AboutSection";
-import ProjectSection from "@/components/ProjectSection";
-import Link from "next/link";
 import { Icon } from "@iconify/react";
-import Subheading from "@/components/Subheading";
+import Link from "next/link";
 
 export default function Home() {
   return (

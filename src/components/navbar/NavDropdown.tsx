@@ -5,10 +5,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import React from "react";
-import { navigation } from "@/lib/navigation";
-import { buttonVariants } from "./ui/button";
-import ThemeToggle from "./ThemeToggle";
+import { navigation } from "@/lib/data/navigation";
+import ThemeToggle from "../ThemeToggle";
+import { buttonVariants } from "../ui/button";
 
 export const NavDropDown = () => {
   return (

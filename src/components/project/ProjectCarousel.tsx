@@ -8,7 +8,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { Project } from "@/lib/projects";
+import { Project } from "@/lib/data/projects";
 import { useMediaQuery } from "@/lib/hooks";
 
 type ProjectCarouselProps = {

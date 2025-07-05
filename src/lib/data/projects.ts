@@ -1,6 +1,5 @@
-import { slugify } from "./utils";
-import fs from "fs";
-import path from "path";
+import { slugify } from "../utils";
+import { getNumberOfImages } from "../queries/project";
 
 export interface Project {
   slug: string;
@@ -19,21 +18,6 @@ const createProject = (data: Project): Project => {
     }),
     slug: slugify(data.title),
   };
-};
-
-export const getProjectBySlug = (slug: string): Project | undefined => {
-  return projects.find((projects) => projects.slug === slug);
-};
-
-const getNumberOfImages = (title: string): number => {
-  const folderPath = path.join(
-    process.cwd(),
-    "public",
-    "images",
-    title.replaceAll(" ", "")
-  );
-  const files = fs.readdirSync(folderPath);
-  return files.length;
 };
 
 export const projects: Project[] = [

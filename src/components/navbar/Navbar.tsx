@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import NavDropDown from "./NavDropdown";
 import NavMenu from "./NavMenu";
-import { usePathname } from "next/navigation";
 import NavReturn from "./NavReturn";
 
 export const Navbar = () => {
@@ -46,12 +46,12 @@ export const Navbar = () => {
       ${showNavbar ? "opacity-100" : "opacity-0 pointer-events-none"}`}
     >
       {isHome ? (
-        <nav className="bg-[var(--secondaryBg)] shadow-xl h-fit py-3 rounded-xl w-full tablet:w-[600px] items-center justify-center">
+        <nav className="bg-[var(--secondaryBg)] shadow-xl h-fit py-1.5 tablet:py-3 rounded-xl w-full tablet:w-[600px] items-center justify-center">
           <NavDropDown />
           <NavMenu />
         </nav>
       ) : (
-        <nav className="bg-[var(--secondaryBg)] shadow-xl h-fit py-3 rounded-xl w-full mphone:w-[350px] items-center justify-center">
+        <nav className="bg-[var(--secondaryBg)] shadow-xl h-fit py-1.5 talet:py-3 rounded-xl w-full mphone:w-[350px] items-center justify-center">
           <NavReturn />
         </nav>
       )}

@@ -1,3 +1,4 @@
+import CursorTrail from "@/components/CursorTrail";
 import Navbar from "@/components/navbar/Navbar";
 import ThemeProvider from "@/providers/ThemeProvider";
 import type { Metadata } from "next";
@@ -34,6 +35,7 @@ export default function RootLayout({
             position="bottom-right"
             richColors
           />
+          <CursorTrail />
         </ThemeProvider>
       </body>
     </html>

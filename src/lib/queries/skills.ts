@@ -1,4 +1,5 @@
-import { allSkills, Skill } from "../data/skills";
+import { allSkills } from "../data/skills";
+import { Skill } from "../types";
 
 export const getSkillsByName = (
   names: string[] | undefined

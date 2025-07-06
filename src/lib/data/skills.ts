@@ -1,7 +1,4 @@
-export type Skill = {
-  name: string;
-  color: string;
-};
+import { Skill } from "../types";
 
 export const skills: Skill[] = [
   { name: "Java", color: "#df8e2b" },

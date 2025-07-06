@@ -1,14 +1,6 @@
-import { slugify } from "../utils";
 import { getNumberOfImages } from "../queries/project";
-
-export interface Project {
-  slug: string;
-  title: string;
-  description: string;
-  imageUrls: string[]; // Changed to an array to support multiple images
-  skills: string[];
-  githubUrl?: string;
-}
+import { Project } from "../types";
+import { slugify } from "../utils";
 
 const createProject = (data: Project): Project => {
   return {

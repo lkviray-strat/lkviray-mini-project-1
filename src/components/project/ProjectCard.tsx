@@ -1,15 +1,16 @@
-import { Skill } from "@/lib/data/skills";
-import { getProjectBySlug } from "@/lib/queries/project";
 import { getSkillsByName } from "@/lib/queries/skills";
+import { Project, Skill } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import SkillBadge from "../SkillBadge";
 
 type ProjectCardProps = {
   slug: string;
+  projects: Project[];
 };
-export const ProjectCard = async ({ slug }: ProjectCardProps) => {
-  const project = getProjectBySlug(slug);
+export const ProjectCard = ({ slug, projects }: ProjectCardProps) => {
+  const project = projects.find((projects) => projects.slug === slug);
+
   const skills: Skill[] =
     (getSkillsByName(project?.skills ?? []) as Skill[]) || [];
   const imageUrl = project?.imageUrls?.[0];
@@ -17,7 +18,7 @@ export const ProjectCard = async ({ slug }: ProjectCardProps) => {
   return (
     <Link
       href={`/projects/${project?.slug}`}
-      className="flex flex-col p-4 p border-1 gap-4 rounded-2xl grow basis-[350px] max-w-[420px] shadow-lg hover:scale-98 transition-transform duration-400 hover:brightness-90"
+      className="flex flex-col p-4 p bg-[var(--secondaryBg)]  gap-4 rounded-2xl grow basis-[350px] max-w-[420px] shadow-lg hover:scale-98 transition-transform duration-400 hover:brightness-90"
     >
       <div className="w-full aspect-[3/3] relative mb-2 rounded-2xl overflow-hidden">
         <Image

@@ -1,7 +1,5 @@
 import Link from "next/link";
-import React from "react";
 import { buttonVariants } from "../ui/button";
-import { Icon } from "@iconify/react";
 
 export const HomeButtons = () => {
   return (

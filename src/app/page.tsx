@@ -2,7 +2,9 @@ import AboutSection from "@/components/about/AboutSection";
 import ContactForm from "@/components/contact/ContactForm";
 import Heading from "@/components/home/Heading";
 import HomeButtons from "@/components/home/HomeButtons";
+import SocialButtons from "@/components/home/SocialButtons";
 import Subheading from "@/components/home/Subheading";
+import FadeInSection from "@/components/motion/FadeInSection";
 import ProjectSection from "@/components/project/ProjectSection";
 
 export default function Home() {
@@ -13,10 +15,18 @@ export default function Home() {
         className="flex flex-col gap-2 min-h-screen items-center justify-center"
       >
         <div className="flex flex-col w-full px-9 -mt-15 text-center justify-center items-center">
-          <Heading />
-          <Subheading />
-
-          <HomeButtons />
+          <FadeInSection delay={0.1}>
+            <Heading />
+          </FadeInSection>
+          <FadeInSection delay={0.4}>
+            <Subheading />
+          </FadeInSection>
+          <FadeInSection delay={0.7}>
+            <HomeButtons />
+          </FadeInSection>
+          <FadeInSection delay={0.9}>
+            <SocialButtons />
+          </FadeInSection>
         </div>
       </section>
 
@@ -26,9 +36,11 @@ export default function Home() {
           className="flex flex-col items-center"
         >
           <div className="flex flex-col items-center px-9 w-full max-w-[1250px] tablet:items-start">
-            <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight transition-colors duration-200 hover:text-blue-400">
-              About Me
-            </h1>
+            <FadeInSection delay={0.3}>
+              <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight transition-colors duration-200 hover:text-blue-400">
+                About Me
+              </h1>
+            </FadeInSection>
 
             <AboutSection />
           </div>
@@ -37,11 +49,13 @@ export default function Home() {
           id="projects"
           className="flex flex-col items-center"
         >
-          <div className="flex flex-col items-center px-9 w-full max-w-[1250px]">
-            <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight transition-colors duration-200 hover:text-blue-400">
-              My Projects
-            </h1>
-          </div>
+          <FadeInSection delay={0.3}>
+            <div className="flex flex-col items-center px-9 w-full max-w-[1250px]">
+              <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight transition-colors duration-200 hover:text-blue-400">
+                My Projects
+              </h1>
+            </div>
+          </FadeInSection>
 
           <ProjectSection />
         </section>
@@ -50,10 +64,11 @@ export default function Home() {
           className="flex flex-col items-center"
         >
           <div className="flex flex-col items-center px-9 w-full max-w-[1250px] tablet:items-start">
-            <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight transition-colors duration-200 hover:text-blue-400">
-              Contact Me
-            </h1>
-
+            <FadeInSection delay={0.3}>
+              <h1 className="mt-[6rem] desktop:mt-[8rem] font-bold text-[30px] lphone:text-[45px] tablet:text-[70px] tracking-tight transition-colors duration-200 hover:text-blue-400">
+                Contact Me
+              </h1>
+            </FadeInSection>
             <ContactForm />
           </div>
         </section>

@@ -1,10 +1,9 @@
 import AboutSection from "@/components/about/AboutSection";
 import ContactForm from "@/components/contact/ContactForm";
+import Heading from "@/components/home/Heading";
+import HomeButtons from "@/components/home/HomeButtons";
 import Subheading from "@/components/home/Subheading";
 import ProjectSection from "@/components/project/ProjectSection";
-import { buttonVariants } from "@/components/ui/button";
-import { Icon } from "@iconify/react";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -13,55 +12,11 @@ export default function Home() {
         id="home"
         className="flex flex-col gap-2 min-h-screen items-center justify-center"
       >
-        <div className="flex flex-col w-full px-9 -mt-20 text-center justify-center items-center">
-          <h1
-            className={` text-[27px] mphone:text-[32px] lphone:text-[38px] tablet:text-[44px] laptop:text-[60px] font-semibold`}
-          >
-            Hello,{" "}
-            <span className="-ml-2 tablet:-ml-4 ">
-              I&apos;m
-              <span className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent font-bold">
-                {" "}
-                Liam <span className="hidden tablet:inline">Kyle</span>
-              </span>
-            </span>
-          </h1>
+        <div className="flex flex-col w-full px-9 -mt-15 text-center justify-center items-center">
+          <Heading />
           <Subheading />
 
-          <div className="flex flex-col lphone:flex-row w-full lphone:w-fit gap-3 laptop:gap-5 items-center mt-4 px-3 justify-center">
-            <Link
-              href="#about"
-              className={`${buttonVariants({
-                variant: "default",
-              })} flex-1 bg-blue-700 p-4 w-full !px-6 lphone:!py-4 laptop:!px-9 text-[15px] lphone:text-[15px] tablet:text-[18px] tablet:!py-5 text-white hover:bg-blue-800 active:bg-blue-400 shadow-xl`}
-            >
-              Know About Me
-            </Link>
-
-            <Link
-              download
-              href={"/downloads/Liam-Kyle-Viray_CV.pdf"}
-              className={`${buttonVariants({
-                variant: "default",
-              })} flex-1 bg-[var(--secondaryBg)] w-full !px-6 lphone:!py-4 laptop:!px-9 text-[15px] lphone:text-[15px] tablet:text-[18px] tablet:!py-5 shadow-xl`}
-            >
-              Download CV
-            </Link>
-          </div>
-          <div className="flex gap-7 items-center mt-10">
-            <Link href="https://github.com/xNeshi">
-              <Icon
-                icon="codicon:github-inverted"
-                className="size-10 transition-colors duration-200 hover:text-blue-400"
-              />
-            </Link>
-            <Link href="https://www.linkedin.com/in/liam-kyle-viray/">
-              <Icon
-                icon="devicon-plain:linkedin"
-                className="size-10 transition-colors duration-200 hover:text-blue-400"
-              />
-            </Link>
-          </div>
+          <HomeButtons />
         </div>
       </section>
 

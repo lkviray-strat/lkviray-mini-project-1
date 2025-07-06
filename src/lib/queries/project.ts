@@ -1,6 +1,7 @@
-import path from "path";
 import fs from "fs";
-import { Project, projects } from "../data/projects";
+import path from "path";
+import { projects } from "../data/projects";
+import { Project } from "../types";
 
 export const getProjectBySlug = (slug: string): Project | undefined => {
   return projects.find((projects) => projects.slug === slug);

@@ -6,7 +6,7 @@ export const getProjectBySlug = (slug: string): Project | undefined => {
   return projects.find((projects) => projects.slug === slug);
 };
 
-export const getNumberOfImages = (title: string): number => {
+export function getNumberOfImages(title: string): number {
   const folderPath = path.join(
     process.cwd(),
     "public",
@@ -15,4 +15,4 @@ export const getNumberOfImages = (title: string): number => {
   );
   const files = fs.readdirSync(folderPath);
   return files.length;
-};
+}

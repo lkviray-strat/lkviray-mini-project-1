@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <section
         id="home"
-        className="flex flex-col gap-2 min-h-screen items-center justify-center"
+        className="flex select-none flex-col gap-2 min-h-screen items-center justify-center"
       >
         <div className="flex flex-col w-full px-9 -mt-15 text-center justify-center items-center">
           <FadeInSection delay={0.1}>
@@ -30,7 +30,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="px-4 tablet:px-9 laptop:px-12">
+      <div className=" select-none px-4 tablet:px-9 laptop:px-12">
         <section
           id="about"
           className="flex flex-col items-center"

@@ -1,9 +1,7 @@
-import React from "react";
-
 export const Heading = () => {
   return (
     <h1
-      className={` text-[27px] mphone:text-[32px] lphone:text-[38px] tablet:text-[44px] laptop:text-[60px] font-semibold`}
+      className={` select-none text-[27px] mphone:text-[32px] lphone:text-[38px] tablet:text-[44px] laptop:text-[60px] font-semibold`}
     >
       Hello,{" "}
       <span className="-ml-2 tablet:-ml-4 ">

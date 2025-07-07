@@ -1553,8 +1553,62 @@ const FluidSimulation = () => {
     initFramebuffers();
     updateKeywords();
 
+    let isInteracting = false;
     // Event listeners
+    // const handleMouseDown = (e: MouseEvent) => {
+    //   const pointer = pointers[0];
+    //   const posX = scaleByPixelRatio(e.clientX);
+    //   const posY = scaleByPixelRatio(e.clientY);
+    //   updatePointerDownData(pointer, -1, posX, posY);
+    //   clickSplat(pointer);
+    // };
+
+    // const handleMouseMove = (e: MouseEvent) => {
+    //   const pointer = pointers[0];
+    //   const posX = scaleByPixelRatio(e.clientX);
+    //   const posY = scaleByPixelRatio(e.clientY);
+    //   const color = pointer.color;
+    //   updatePointerMoveData(pointer, posX, posY, color);
+    // };
+
+    // const handleTouchStart = (e: TouchEvent) => {
+    //   e.preventDefault();
+    //   const touches = e.targetTouches;
+    //   const pointer = pointers[0];
+    //   for (let i = 0; i < touches.length; i++) {
+    //     const posX = scaleByPixelRatio(touches[i].clientX);
+    //     const posY = scaleByPixelRatio(touches[i].clientY);
+    //     updatePointerDownData(pointer, touches[i].identifier, posX, posY);
+    //   }
+    // };
+
+    // const handleTouchMove = (e: TouchEvent) => {
+    //   e.preventDefault();
+    //   const touches = e.targetTouches;
+    //   const pointer = pointers[0];
+    //   for (let i = 0; i < touches.length; i++) {
+    //     const posX = scaleByPixelRatio(touches[i].clientX);
+    //     const posY = scaleByPixelRatio(touches[i].clientY);
+    //     updatePointerMoveData(pointer, posX, posY, pointer.color);
+    //   }
+    // };
+
+    // const handleTouchEnd = (e: TouchEvent) => {
+    //   const touches = e.changedTouches;
+    //   const pointer = pointers[0];
+    //   for (let i = 0; i < touches.length; i++) {
+    //     updatePointerUpData(pointer);
+    //   }
+    // };
+
+    let touchStartTime = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    const TOUCH_HOLD_THRESHOLD = 100; // ms (time before considering it an interaction)
+    const TOUCH_MOVE_THRESHOLD = 5; // px (movement before considering it a scroll)
+
     const handleMouseDown = (e: MouseEvent) => {
+      isInteracting = true;
       const pointer = pointers[0];
       const posX = scaleByPixelRatio(e.clientX);
       const posY = scaleByPixelRatio(e.clientY);
@@ -1563,6 +1617,7 @@ const FluidSimulation = () => {
     };
 
     const handleMouseMove = (e: MouseEvent) => {
+      if (!isInteracting) return;
       const pointer = pointers[0];
       const posX = scaleByPixelRatio(e.clientX);
       const posY = scaleByPixelRatio(e.clientY);
@@ -1570,34 +1625,56 @@ const FluidSimulation = () => {
       updatePointerMoveData(pointer, posX, posY, color);
     };
 
+    const handleMouseUp = () => {
+      isInteracting = false;
+    };
+
     const handleTouchStart = (e: TouchEvent) => {
-      e.preventDefault();
-      const touches = e.targetTouches;
-      const pointer = pointers[0];
-      for (let i = 0; i < touches.length; i++) {
-        const posX = scaleByPixelRatio(touches[i].clientX);
-        const posY = scaleByPixelRatio(touches[i].clientY);
-        updatePointerDownData(pointer, touches[i].identifier, posX, posY);
+      if (e.touches.length === 1) {
+        touchStartTime = Date.now();
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
       }
     };
 
     const handleTouchMove = (e: TouchEvent) => {
-      e.preventDefault();
-      const touches = e.targetTouches;
-      const pointer = pointers[0];
-      for (let i = 0; i < touches.length; i++) {
-        const posX = scaleByPixelRatio(touches[i].clientX);
-        const posY = scaleByPixelRatio(touches[i].clientY);
-        updatePointerMoveData(pointer, posX, posY, pointer.color);
+      if (e.touches.length !== 1) return; // Ignore multi-touch
+
+      const touch = e.touches[0];
+      const now = Date.now();
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      // If the touch is held long enough or moved very little, treat it as an interaction
+      if (
+        now - touchStartTime > TOUCH_HOLD_THRESHOLD ||
+        distance < TOUCH_MOVE_THRESHOLD
+      ) {
+        if (!isInteracting) {
+          isInteracting = true;
+          const pointer = pointers[0];
+          const posX = scaleByPixelRatio(touchStartX);
+          const posY = scaleByPixelRatio(touchStartY);
+          updatePointerDownData(pointer, touch.identifier, posX, posY);
+          clickSplat(pointer);
+        }
+
+        // Only prevent default if actively interacting
+        if (isInteracting) {
+          const pointer = pointers[0];
+          const posX = scaleByPixelRatio(touch.clientX);
+          const posY = scaleByPixelRatio(touch.clientY);
+          updatePointerMoveData(pointer, posX, posY, pointer.color);
+          e.preventDefault();
+        }
       }
     };
 
     const handleTouchEnd = (e: TouchEvent) => {
-      const touches = e.changedTouches;
+      isInteracting = false;
       const pointer = pointers[0];
-      for (let i = 0; i < touches.length; i++) {
-        updatePointerUpData(pointer);
-      }
+      updatePointerUpData(pointer);
     };
 
     // Initial interaction
@@ -1623,10 +1700,10 @@ const FluidSimulation = () => {
     // Add event listeners
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("touchstart", handleTouchStart, { passive: false });
     window.addEventListener("touchmove", handleTouchMove, { passive: false });
     window.addEventListener("touchend", handleTouchEnd);
-
     // Start on first interaction
     window.addEventListener("mousemove", handleFirstInteraction);
     window.addEventListener("touchstart", handleFirstInteraction);
@@ -1636,6 +1713,7 @@ const FluidSimulation = () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);

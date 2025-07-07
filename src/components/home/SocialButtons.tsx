@@ -20,7 +20,7 @@ export const SocialButtons = () => {
       >
         <Icon
           icon="mage:instagram-circle"
-          className="size-10 rounded-full tablet:size-12 transition-colors duration-200 hover:text-blue-400"
+          className="size-10.5 rounded-full tablet:size-12.5 transition-colors duration-200 hover:text-blue-400"
         />
       </a>
       <a

@@ -21,7 +21,10 @@ export default function Home() {
           <FadeInSection delay={0.4}>
             <Subheading />
           </FadeInSection>
-          <FadeInSection delay={0.7}>
+          <FadeInSection
+            delay={0.7}
+            className="flex w-full items-center justify-center"
+          >
             <HomeButtons />
           </FadeInSection>
           <FadeInSection delay={0.9}>
